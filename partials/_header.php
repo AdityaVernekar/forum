@@ -19,24 +19,25 @@ session_start();
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Categories
+                         Top Categories
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">';
+                        $sql = "select category_name,category_id from `categories` LIMIT 4";
+                        $result = mysqli_query($conn,$sql);
+                        while($row = mysqli_fetch_assoc($result)){
+                           echo  '<li><a class="dropdown-item" href="threadlist.php?catid='.$row['category_id'].'">'.$row['category_name'].'</a></li>';
+                        }
+                       
+                        
+                    echo ' </ul>
+              </li>
                 <li class="nav-item">
                     <a href="contact.php" class="nav-link">Contact Us</a>
                 </li>
             </ul>';
             if(isset($_SESSION['loggedin'])&&$_SESSION['loggedin']==true){
-                echo '<form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                echo '<form class="d-flex" method="get" action="search.php">
+                <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 <p class="text-light text-center my-0 mx-2">Welcome '. $_SESSION['useremail']. ' </p>
                  <a href="partials/_logout.php" class="btn btn-outline-success ml-2">Logout</a>

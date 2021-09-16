@@ -20,8 +20,9 @@
 
 <body>
     <!-- <h1>iDiscuss- Coding Forums</h1> -->
-    <?php include 'partials/_header.php';
-        include 'partials/_dbconnect.php';?>
+    <?php include 'partials/_dbconnect.php'; 
+    include 'partials/_header.php';
+        ?>
     <?php
      $id = $_GET['catid'];
      $sql = "SELECT * FROM `categories` WHERE category_id=$id;";
@@ -70,7 +71,7 @@
                 Do not PM users asking for help,
                 Remain respectful of other members at all times.....</p>
             <p class="lead">
-                <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
+
             </p>
         </div>
 

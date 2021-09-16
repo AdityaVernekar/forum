@@ -9,37 +9,28 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+        <style>
+            .container{
+                min-height:100vh;
+            }
+        </style>
     <title>iDiscuss- Coding Forums</title>
-    <style>
-    .container {
-        min-height: 90vh;
-    }
-    </style>
 </head>
 
 <body>
     <!-- <h1>iDiscuss- Coding Forums</h1> -->
-    <?php include "partials/_dbconnect.php";
-     include "partials/_header.php";?>
-    <div class="container my-4">
-        <h1 class="text-center">Contact Us</h1>
-        <form action="/forum/partials/_handlecontact.php" method="post">
-            <div class="form-group my-3">
-                First Name: <input type="text" name="first_name"><br>
-                Last Name: <input type="text" name="last_name"><br>
-                <label class="my-3" for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-            </div>
-            <div class="form-group my-3">
-                <label class="my-3 for=" exampleFormControlTextarea1">Type your query</label>
-                <textarea class="form-control" id="message" name="message" rows="5"></textarea>
-            </div>
-            <button class="btn btn-success my-3" input type="submit" name="submit" value="Submit">Submit</button>
-        </form>
-    </div>
-    
+    <?php
+        include 'partials/_dbconnect.php';
+        include 'partials/_header.php';?>
 
+        <div class="container">
+            <h1 class="py-2 my-3">Search results for <em> <?php echo $_GET['search'];?></em></h1>
+            <div class="results">
+                <h3><a href=""></a></h3>
+            </div>
+        </div>
+
+   
     <?php include "partials/_footer.php";?>
 
 

@@ -20,8 +20,9 @@
 
 <body>
     <!-- <h1>iDiscuss- Coding Forums</h1> -->
-    <?php include 'partials/_header.php';
-        include 'partials/_dbconnect.php';?>
+    <?php  include 'partials/_dbconnect.php';
+    include 'partials/_header.php';
+       ?>
     <?php
      $id = $_GET['threadid'];
      $sql = "SELECT * FROM `thread` WHERE thread_id=$id";
